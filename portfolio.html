@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- EDIT 1: Give your browser tab a title. -->
+  <title>YOUR-NICKNAME | Student portfolio</title>
+  <style>
+    :root {
+      /* EDIT 2: Try plum with #49213e and #f2cbea instead. */
+      --ink: #162c26;
+      --accent: #164e43;
+      --highlight: #cfed9d;
+      --paper: #f8f7ef;
+      --line: #c0cbbd;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font: 1.05rem/1.6 "DM Sans", system-ui, sans-serif;
+    }
+    .wrap { width: min(100% - 2.5rem, 66rem); margin-inline: auto; }
+    h1, h2, h3, p, figure { margin: 0; }
+    h1, h2, h3 { font-family: "Baskervville", Georgia, serif; font-weight: 500; line-height: 1.08; }
+    h1 { font-size: clamp(3.4rem, 9vw, 7.4rem); letter-spacing: -.05em; overflow-wrap: anywhere; }
+    h2 { font-size: clamp(2rem, 5vw, 3.8rem); letter-spacing: -.04em; }
+    h3 { font-size: 1.7rem; }
+    a { color: inherit; text-underline-offset: .23em; }
+    a:hover, summary:hover { text-decoration-thickness: .16em; }
+    :focus-visible { outline: 3px solid currentColor; outline-offset: 4px; }
+    header { background: var(--accent); color: white; }
+    nav, .nav-links, footer { display: flex; align-items: center; gap: 1.2rem; flex-wrap: wrap; }
+    nav, footer { justify-content: space-between; padding-block: 1.1rem; }
+    nav { border-bottom: 1px solid #ffffff4d; }
+    .hero { padding-block: clamp(2.8rem, 7vw, 5rem); }
+    .hero h1 { color: var(--highlight); }
+    .hero p { max-width: 42rem; margin-block: 1rem 1.6rem; font-size: clamp(1.1rem, 3vw, 1.55rem); }
+    .button { display: inline-block; padding: .55rem 1rem; background: var(--highlight); color: #15281d; border-radius: 2rem; font-weight: 650; }
+    .button:focus-visible { outline-color: white; }
+    .feature { display: grid; grid-template-columns: 1.1fr 1fr; align-items: center; gap: clamp(1.5rem, 5vw, 4rem); padding-block: 3rem; }
+    .feature h3, .feature p, .note p { margin-top: .8rem; }
+    .feature a { display: inline-block; margin-top: 1rem; font-weight: 650; }
+    .note { padding: clamp(1.2rem, 4vw, 2rem); border: 1px solid var(--line); border-radius: 1rem; background: #fff; }
+    .note h3 { margin-top: 0; }
+    .bar { height: .75rem; background: #e0e8df; border-radius: 1rem; overflow: hidden; }
+    .bar span { display: block; height: 100%; background: var(--accent); }
+    .measure { display: flex; justify-content: space-between; margin-top: .85rem; }
+    figcaption { margin-top: .8rem; font-size: .9rem; }
+    details { margin-top: .8rem; }
+    summary { cursor: pointer; text-decoration: underline; text-underline-offset: .2em; }
+    .about { padding-block: 2rem; border-block: 1px solid var(--line); }
+    .about p { margin-top: .65rem; max-width: 60ch; }
+    footer { font-size: .95rem; }
+    @media (max-width: 42rem) {
+      .feature { grid-template-columns: 1fr; padding-block: 2rem; }
+      .nav-links { gap: .85rem; }
+    }
+  </style>
+</head>
+<body>
+  <header id="top">
+    <div class="wrap">
+      <nav aria-label="Main">
+        <strong>YOUR-NICKNAME’s portfolio</strong>
+        <div class="nav-links"><a href="#work">Work</a><a href="#about">About</a><a href="https://github.com/YOUR-USERNAME">GitHub</a></div>
+      </nav>
+      <div class="hero">
+        <!-- EDIT 3: Introduce yourself in your own words. -->
+        <h1>Hi, I’m YOUR-NICKNAME.</h1>
+        <p>I like questions I can test with a small dataset and a pencil.</p>
+        <a class="button" href="#work">Explore my project ↓</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <!-- EDIT 4: Tell the reader what you did and link to the actual work. -->
+    <section class="feature" id="work" aria-labelledby="work-title">
+      <div>
+        <h2 id="work-title">Featured work</h2>
+        <h3>Which paper plane flies farther?</h3>
+        <p>I compared five example flights per design. The dart had the longest single flight, but the glider had the longer median. The answer depends on what “farther” means.</p>
+        <a href="https://github.com/YOUR-USERNAME/my-first-repo/blob/main/flight-log.md">Read my flight log →</a>
+      </div>
+      <figure class="note">
+        <h3>Median flight distance</h3>
+        <div class="measure"><span>Dart</span><strong>4 m</strong></div>
+        <div class="bar" aria-hidden="true"><span style="width: 40%"></span></div>
+        <div class="measure"><span>Glider</span><strong>6 m</strong></div>
+        <div class="bar" aria-hidden="true"><span style="width: 60%"></span></div>
+        <figcaption>Shared scale from 0 to 10 meters. Fictional workshop data.</figcaption>
+        <details><summary>See all ten distances</summary>
+          <p>Dart (m): 3, 4, 4, 5, 9.<br>Glider (m): 4, 5, 6, 6, 7.</p>
+        </details>
+      </figure>
+    </section>
+
+    <section class="about" id="about">
+      <h2>What I’m learning</h2>
+      <!-- EDIT 5: Name one skill you practiced and one specific next step. -->
+      <p>I practiced organizing results in Markdown. Next I want to plot all ten flights so readers can see how the distances vary.</p>
+    </section>
+  </main>
+  <footer class="wrap">
+    <a href="https://github.com/YOUR-USERNAME">Find my work on GitHub</a>
+    <a href="#top">Back to top ↑</a>
+  </footer>
+</body>
+</html>
